@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%  static 'SystemUser/verifyregistration.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .chartBox{
+            width: 300px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container title">
+        <div class="logo w-100 d-flex p-1 justify-content-center"  >
+        <img class="animation__shake mr-3" src="{% static 'SystemUser/assets/dist/img/logo.png' %}" alt="AdminLTELogo" height="60" width="60">
+        <h1 class="mt-2 logo-title">Distiller Analysis</h1>
+        </div>
+        <h5 style="text-align: center">Brand Name Vs Product Count</h5>
+        <div class="row">
+            <div class="chartBox col-md-4">
+                <h6 style="text-align: center">Bar Chart</h6>
+              <canvas id="myChart"></canvas>
+            </div>
+            <div class="chartBox col-md-4">
+                <h6 style="text-align: center">Line Chart</h6>
+              <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chartBox col-md-4">
+                <h6 style="text-align: center">Pie Chart</h6>
+              <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+        <h5 style="text-align: center">Product Quantity Vs Product Count</h5>
+        <div class="row">
+            <div class="chartBox col-md-4">
+                <h6 style="text-align: center">Bar Chart</h6>
+              <canvas id="myChart2"></canvas>
+            </div>
+            <div class="chartBox col-md-4">
+                <h6 style="text-align: center">Line Chart</h6>
+              <canvas id="lineChart2"></canvas>
+            </div>
+            <div class="chartBox col-md-4">
+                <h6 style="text-align: center">Pie Chart</h6>
+              <canvas id="pieChart2"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="text/javascript">
+        //setup
+        var data_dict = {{ data1| safe }};
+        var data_dict2 = {{ data2| safe }};
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        const data={
+            labels: data_dict.brand_name,
+              datasets: [{
+                label: 'No. of Products',
+                data: data_dict.count_val,
+                backgroundColor: [
+                    'rgba(255,99,132,0.9)',
+                    'rgba(54,162,235,0.9)',
+                    'rgba(255,206,86,0.9)',
+
+                ],
+                borderColor: [
+                    'rgba(255,99,132,0.9)',
+                    'rgba(54,162,235,0.9)',
+                    'rgba(255,206,86,0.9)',
+
+                ],
+                borderWidth: 1
+              }]
+        };
+        const data2={
+            labels: data_dict2.product_quantity,
+              datasets: [{
+                label: 'No. of Products',
+                data: data_dict2.count_val,
+                backgroundColor: [
+                    'rgba(255,99,132,0.9)',
+                    'rgba(54,162,235,0.9)',
+
+                ],
+                borderColor: [
+                    'rgba(255,99,132,0.9)',
+                    'rgba(54,162,235,0.9)',
+
+                ],
+                borderWidth: 1
+              }]
+        };
+        //config
+        const config={
+            type: 'bar',
+            data,
+            options: {
+              scales: {
+
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+        };
+        const config_21={
+            type: 'bar',
+            data2,
+            options: {
+              scales: {
+
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+        };
+        //config line
+        const config2={
+            type: 'line',
+            data,
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+        };
+        const config_22={
+            type: 'line',
+            data2,
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+        };
+        //config line
+        const config3={
+            type: 'pie',
+            data,
+            options: {
+
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+        };
+        const config_23={
+            type: 'pie',
+            data2,
+            options: {
+
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+        };
+        //render init block
+        const myChart= new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+        const myChart2= new Chart(
+            document.getElementById('myChart2'),
+            config
+        );
+        //render init block
+        const lineChart= new Chart(
+            document.getElementById('lineChart'),
+            config2
+        );
+        const lineChart2= new Chart(
+            document.getElementById('lineChart2'),
+            config2
+        );
+        //render init block
+        const pieChart= new Chart(
+            document.getElementById('pieChart'),
+            config3
+        );
+        const pieChart2= new Chart(
+            document.getElementById('pieChart2'),
+            config_23
+        );
+
+    </script>
+</body>
+</html>

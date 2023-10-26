@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%  static 'SystemUser/verifyregistration.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+</head>
+<body>
+<div class="title">
+{#    <div class="logo w-100 m-auto text-center"  >#}
+{#    <img class="animation__shake m-auto" src="{% static 'SystemUser/assets/dist/img/logo.png' %}" alt="AdminLTELogo" height="60" width="60">#}
+{##}
+{#    </div>#}
+{#    <div class="heading w-100 text-center">#}
+{#       <h1 class="w-75 m-auto">Verify Registration</h1>#}
+{#    </div>#}
+    <div class="logo w-100 d-flex p-1 justify-content-center"  >
+    <img class="animation__shake mr-3" src="{% static 'SystemUser/assets/dist/img/logo.png' %}" alt="AdminLTELogo" height="60" width="60">
+    <h1 class="mt-2 logo-title">Report Generation</h1>
+    </div>
+
+<div class="container text-left mt-4" >
+    <h5><b>Distiller Details</b></h5>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product Quantity</th>
+                <th scope="col">Max Production</th>
+                <th scope="col">Min Production</th>
+                <th scope="col">Distiller with Max Production</th>
+                <th scope="col">Distiller with Min Production</th>
+                <th scope="col">Max Export</th>
+                <th scope="col">Min Export</th>
+                <th scope="col">Distiller with Max Export</th>
+                <th scope="col">Distiller with Min Export</th>
+                <th scope="col">Brand with Max Export</th>
+                <th scope="col">Brand with Min Export</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class=table-active">
+            <!--<th scope="row">1</th>-->
+                <td>90ml</td>
+                <td>100</td>
+                <td>10</td>
+                <td>John</td>
+                <td>Amrit</td>
+                <td>90</td>
+                <td>8</td>
+                <td>John</td>
+                <td>Amrit</td>
+                <td>Bacardi</td>
+                <td>Diageo</td>
+            </tr>
+            <tr class=table-active">
+                <td>180ml</td>
+                <td>200</td>
+                <td>20</td>
+                <td>Amrit</td>
+                <td>John</td>
+                <td>180</td>
+                <td>16</td>
+                <td>Amrit</td>
+                <td>John</td>
+                <td>Bacardi</td>
+                <td>Diageo</td>
+            </tr>
+        </tbody>
+    </table>
+    <h5><b>Ditributor Details</b></h5>
+    <table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Product Quantity</th>
+            <th scope="col">Max Import</th>
+            <th scope="col">Min Import</th>
+            <th scope="col">Distributor with Max Import</th>
+            <th scope="col">Distiller with Min Import</th>
+            <th scope="col">Max Export</th>
+            <th scope="col">Min Export</th>
+            <th scope="col">Distributor with Max Export</th>
+            <th scope="col">Distiller with Min Export</th>
+            <th scope="col">Brand with Max Export</th>
+            <th scope="col">Brand with Min Export</th>
+        </tr>
+  </thead>
+  <tbody>
+        <tr class=table-active">
+        <!--<th scope="row">1</th>-->
+            <td>90ml</td>
+            <td>90</td>
+            <td>8</td>
+            <td>John</td>
+            <td>Amrit</td>
+            <td>80</td>
+            <td>6</td>
+            <td>John</td>
+            <td>Amrit</td>
+            <td>Bacardi</td>
+            <td>Diageo</td>
+        </tr>
+        <tr class=table-active">
+            <td>180ml</td>
+            <td>180</td>
+            <td>15</td>
+            <td>Amrit</td>
+            <td>John</td>
+            <td>160</td>
+            <td>13</td>
+            <td>Amrit</td>
+            <td>John</td>
+            <td>Bacardi</td>
+            <td>Diageo</td>
+        </tr>
+  </tbody>
+</table>
+<h5><b>Retailor Details</b></h5>
+    <table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Product Quantity</th>
+            <th scope="col">Max Import</th>
+            <th scope="col">Min Import</th>
+            <th scope="col">Retailor with Max Import</th>
+            <th scope="col">Retailor with Min Import</th>
+            <th scope="col">Max Sell</th>
+            <th scope="col">Min Sell</th>
+            <th scope="col">Retailor with Max Sell</th>
+            <th scope="col">Retailor with Min Sell</th>
+            <th scope="col">Brand with Max Sell</th>
+            <th scope="col">Brand with Min Sell</th>
+        </tr>
+  </thead>
+  <tbody>
+        <tr class=table-active">
+        <!--<th scope="row">1</th>-->
+            <td>90ml</td>
+            <td>80</td>
+            <td>5</td>
+            <td>John2</td>
+            <td>Amrit2</td>
+            <td>70</td>
+            <td>4</td>
+            <td>John2</td>
+            <td>Amrit2</td>
+            <td>Bacardi</td>
+            <td>Diageo</td>
+        </tr>
+        <tr class=table-active">
+            <td>180ml</td>
+            <td>160</td>
+            <td>12</td>
+            <td>Amrit2</td>
+            <td>John2</td>
+            <td>150</td>
+            <td>5</td>
+            <td>Amrit2</td>
+            <td>John2</td>
+            <td>Bacardi</td>
+            <td>Diageo</td>
+        </tr>
+  </tbody>
+</table>
+    <h5><b>Instock Details</b></h5>
+    <table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Level</th>
+            <th scope="col">Brand with max Instock</th>
+            <th scope="col">Brand with min Instock</th>
+            <th scope="col">Quantity with max Instock</th>
+            <th scope="col">Quantity with Min Instock</th>
+
+        </tr>
+  </thead>
+  <tbody>
+        <tr class=table-active">
+        <!--<th scope="row">1</th>-->
+            <td>Distiller</td>
+            <td>Bacardi</td>
+            <td>Diageo</td>
+            <td>90</td>
+            <td>180</td>
+        </tr>
+        <tr class=table-active">
+        <!--<th scope="row">1</th>-->
+            <td>Distributor</td>
+            <td>Bacardi</td>
+            <td>Diageo</td>
+            <td>180</td>
+            <td>90</td>
+        </tr>
+        <tr class=table-active">
+        <!--<th scope="row">1</th>-->
+            <td>Retailor</td>
+            <td>Diageo</td>
+            <td>Bacardi</td>
+            <td>90</td>
+            <td>180</td>
+        </tr>
+
+  </tbody>
+</table>
+
+</div>
+</div>
+
+
+</body>
+</html>
